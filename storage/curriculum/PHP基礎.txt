@@ -1,0 +1,118 @@
+PHP基礎プログラミング
+
+## 変数と基本構文
+
+PHPは動的型付け言語です。変数は$マークで始まります。
+
+```php
+<?php
+$name = "太郎";
+$age = 20;
+$height = 175.5;
+$isStudent = true;
+
+echo "名前: " . $name . "\n";
+echo "年齢: " . $age . "\n";
+?>
+```
+
+## 配列の使い方
+
+PHPには連想配列と数値配列があります。
+
+```php
+<?php
+// 数値配列
+$fruits = array("りんご", "みかん", "バナナ");
+$fruits = ["りんご", "みかん", "バナナ"]; // 短縮記法
+
+// 連想配列
+$person = array(
+    "name" => "田中",
+    "age" => 25,
+    "city" => "東京"
+);
+
+echo $fruits[0]; // りんご
+echo $person["name"]; // 田中
+?>
+```
+
+## 条件分岐
+
+if文、switch文を使って条件分岐を行います。
+
+```php
+<?php
+$score = 85;
+
+if ($score >= 90) {
+    echo "優秀";
+} elseif ($score >= 70) {
+    echo "良好";
+} else {
+    echo "要努力";
+}
+
+// switch文
+switch ($score) {
+    case 100:
+        echo "満点";
+        break;
+    case 90:
+        echo "優秀";
+        break;
+    default:
+        echo "継続努力";
+}
+?>
+```
+
+## 繰り返し処理
+
+for文、while文、foreach文を使って繰り返し処理を行います。
+
+```php
+<?php
+// for文
+for ($i = 0; $i < 5; $i++) {
+    echo "数値: " . $i . "\n";
+}
+
+// while文
+$count = 0;
+while ($count < 3) {
+    echo "カウント: " . $count . "\n";
+    $count++;
+}
+
+// foreach文
+$colors = ["赤", "青", "緑"];
+foreach ($colors as $color) {
+    echo "色: " . $color . "\n";
+}
+
+// 連想配列のforeach
+$person = ["name" => "佐藤", "age" => 30];
+foreach ($person as $key => $value) {
+    echo $key . ": " . $value . "\n";
+}
+?>
+```
+
+## 関数の定義と呼び出し
+
+```php
+<?php
+function greet($name) {
+    return "こんにちは、" . $name . "さん";
+}
+
+function add($a, $b) {
+    return $a + $b;
+}
+
+echo greet("山田"); // こんにちは、山田さん
+echo add(5, 3); // 8
+?>
+```

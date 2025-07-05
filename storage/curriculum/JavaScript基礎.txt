@@ -1,0 +1,159 @@
+JavaScript基礎プログラミング
+
+## 変数の宣言
+
+JavaScriptでは var, let, const を使って変数を宣言します。
+
+```javascript
+// var（古い宣言方法、使用非推奨）
+var name = "太郎";
+
+// let（再代入可能な変数）
+let age = 25;
+age = 26; // 再代入可能
+
+// const（再代入不可能な定数）
+const PI = 3.14159;
+// PI = 3.14; // エラー！
+```
+
+## データ型
+
+```javascript
+// 数値型
+let number = 42;
+let float = 3.14;
+
+// 文字列型
+let text = "Hello World";
+let template = `私の名前は${name}です`; // テンプレートリテラル
+
+// 真偽値型
+let isActive = true;
+let isComplete = false;
+
+// 配列
+let numbers = [1, 2, 3, 4, 5];
+let mixed = [1, "text", true, null];
+
+// オブジェクト
+let person = {
+    name: "田中",
+    age: 30,
+    city: "大阪"
+};
+```
+
+## 関数の定義
+
+```javascript
+// 関数宣言
+function greet(name) {
+    return "こんにちは、" + name + "さん";
+}
+
+// 関数式
+const add = function(a, b) {
+    return a + b;
+};
+
+// アロー関数
+const multiply = (a, b) => {
+    return a * b;
+};
+
+// 短縮記法
+const square = x => x * x;
+
+console.log(greet("山田")); // こんにちは、山田さん
+console.log(add(5, 3)); // 8
+console.log(multiply(4, 6)); // 24
+console.log(square(5)); // 25
+```
+
+## 条件分岐
+
+```javascript
+let score = 85;
+
+if (score >= 90) {
+    console.log("優秀");
+} else if (score >= 70) {
+    console.log("良好");
+} else {
+    console.log("要努力");
+}
+
+// 三項演算子
+let result = score >= 70 ? "合格" : "不合格";
+
+// switch文
+switch (score) {
+    case 100:
+        console.log("満点");
+        break;
+    case 90:
+        console.log("優秀");
+        break;
+    default:
+        console.log("継続努力");
+}
+```
+
+## 繰り返し処理
+
+```javascript
+// for文
+for (let i = 0; i < 5; i++) {
+    console.log("数値: " + i);
+}
+
+// while文
+let count = 0;
+while (count < 3) {
+    console.log("カウント: " + count);
+    count++;
+}
+
+// 配列の繰り返し
+const fruits = ["りんご", "みかん", "バナナ"];
+
+// forEach
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});
+
+// for...of
+for (const fruit of fruits) {
+    console.log(fruit);
+}
+
+// オブジェクトの繰り返し
+const person = {name: "佐藤", age: 30};
+for (const key in person) {
+    console.log(key + ": " + person[key]);
+}
+```
+
+## DOM操作
+
+```javascript
+// 要素の取得
+const element = document.getElementById("myId");
+const elements = document.getElementsByClassName("myClass");
+const element2 = document.querySelector(".myClass");
+const elements2 = document.querySelectorAll("div");
+
+// 内容の変更
+element.textContent = "新しいテキスト";
+element.innerHTML = "<strong>太字のテキスト</strong>";
+
+// イベントリスナーの追加
+element.addEventListener("click", function() {
+    console.log("クリックされました");
+});
+
+// スタイルの変更
+element.style.color = "red";
+element.style.backgroundColor = "yellow";
+```
